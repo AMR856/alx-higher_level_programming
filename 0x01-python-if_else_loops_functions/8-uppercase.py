@@ -9,6 +9,6 @@ def uppercase(str):
             h = h + 1
             continue
         elif i == "":
-            continue
+            i = '\n'
         print("{}".format(i), end="" if h != k - 1 else '\n')
         h = h + 1
