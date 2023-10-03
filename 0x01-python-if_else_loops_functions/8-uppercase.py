@@ -8,5 +8,7 @@ def uppercase(str):
             print("{}".format(chr((v - 32))), end=""if h != k - 1 else '\n')
             h = h + 1
             continue
+        elif i == "":
+            continue
         print("{}".format(i), end="" if h != k - 1 else '\n')
         h = h + 1
