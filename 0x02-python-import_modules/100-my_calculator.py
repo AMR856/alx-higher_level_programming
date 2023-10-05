@@ -19,12 +19,12 @@ if __name__ == "__main__":
         elif sys.argv[2] == '*':
             f = int(sys.argv[1])
             s = int(sys.argv[3])
-            result = mul(f, s)          
+            result = mul(f, s)
             print("{} * {} = {}".format(f, s, result))
         elif sys.argv[2] == '/':
             f = int(sys.argv[1])
             s = int(sys.argv[3])
-            result = div(f, s)          
+            result = div(f, s)
             print("{} / {} = {}".format(f, s, result))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
