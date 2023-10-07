@@ -12,39 +12,47 @@
 
 int is_palindrome(listint_t **head)
 {
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    listint_t *prev = NULL;
-    listint_t *next;
-    int isPalindrome = 1;
+	listint_t *fast = *head;
+	listint_t *slow = *head;
+	int isP = 1;
+	while (fast != NULL && fast->next != NULL)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+	fast = *head;
+	slow = reverseList(slow);
+	while (slow != NULL)
+	{
+		if (slow->n != fast->n)
+		{
+			isP = 0;
+			break;
+		}
+		slow = slow->next;
+		fast = fast->next;
+	}
+	return (isP);
+}
 
-    if (*head == NULL || (*head)->next == NULL)
-        return (isPalindrome);
+/**
+ * reverseList - A function to reverse a linked list
+ * @head: A pointer to the head of the linked list
+ * 
+ * Return: A pointer to the reversed list
+*/
 
-    while (fast != NULL && fast->next != NULL)
-    {
-        fast = fast->next->next;
-        next = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = next;
-    }
-
-    if (fast != NULL)
-    {
-        slow = slow->next;
-    }
-
-    while (prev != NULL)
-    {
-        if (prev->n != slow->n)
-        {
-            isPalindrome = 0;
-            break;
-        }
-        prev = prev->next;
-        slow = slow->next;
-    }
-
-    return (isPalindrome);
+listint_t *reverseList(listint_t *head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = head;
+	listint_t *temp;
+	while (current != NULL)
+	{
+		temp = current->next;
+		current->next = prev;
+		prev = current;
+		current = temp;
+	}
+	return (prev);
 }
