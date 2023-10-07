@@ -1,19 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-#define MAX_SIZE 1000
-
-/**
- * is_palindrome - A function to check if a linked list is palindrome
- * or not
- * @head: A pointer to a pointer that points to the head
- *
- * Return: 1 if palindrome and 0 if not
-*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "lists.h"
 
 /**
  * is_palindrome - A function to check if a linked list is palindrome
