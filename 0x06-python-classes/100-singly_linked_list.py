@@ -52,13 +52,13 @@ class Node:
 class SinglyLinkedList:
     def __init__(self):
         """The init for my list"""
-        self.__head = Node(0, None)
+        self.__head = None
 
     def __str__(self):
         """This __str__ method that will let me print the
         linked list using print
         """
-        current = self.__head.next_node
+        current = self.__head
         linked_list_str = ""
         while current is not None:
             linked_list_str += str(current.data) + "\n"
