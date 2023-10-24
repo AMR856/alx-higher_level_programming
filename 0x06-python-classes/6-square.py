@@ -33,7 +33,7 @@ class Square:
 
         """
         if myPos[0] >= 0 and myPos[1] >= 0 and isinstance(myPos, tuple) \
-            and len(tuple) == 2 and isinstance(myPos[0], int) \
+            and len(myPos) == 2 and isinstance(myPos[0], int) \
                 and isinstance(myPos[1], int):
             self.__position = myPos
         else:
