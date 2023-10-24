@@ -52,13 +52,13 @@ class Node:
 class SinglyLinkedList:
     def __init__(self):
         """The init for my list"""
-        self.head = Node(0, None)
+        self.__head = Node(0, None)
 
     def __str__(self):
         """This __str__ method that will let me print the
         linked list using print
         """
-        current = self.head.next_node
+        current = self.__head.next_node
         linked_list_str = ""
         while current is not None:
             linked_list_str += str(current.data) + "\n"
@@ -72,7 +72,7 @@ class SinglyLinkedList:
 
         """
         newNode = Node(value)
-        current = self.head
+        current = self.__head
         if current.next_node is None or newNode.data < current.data:
             newNode.next_node = current.next_node
             current.next_node = newNode
