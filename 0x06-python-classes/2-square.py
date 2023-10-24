@@ -11,8 +11,8 @@ class Square:
             It's the size of the created object
 
         """
-        if type(size) is int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if (size < 0):
-            raise ValueError("ValueError")
+            raise ValueError("size must be >= 0")
         self.__size = size
