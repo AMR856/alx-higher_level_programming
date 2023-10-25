@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""Making my Node class"""
+"""Singly Linked Lists module.
+
+This module contains methods about the creation and handling of
+SinglyLinkedList and Node objects.
+
+"""
 
 
 class Node:
@@ -16,42 +21,30 @@ class Node:
 
     @property
     def data(self):
-        """The getter for my data"""
+        """The getter and getter for my data in the node"""
         return self.__data
 
     @data.setter
     def data(self, value):
-        """The setter for my data
-
-        Args:
-            The value of the data to be put
-        """
         if not isinstance(value, int) and value is not None:
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
-        """The getter for the next_node"""
+        """The getter and setter for the next_node"""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """The setter for my next_node
-
-        Args:
-            The next_node to be put in the list
-        """
         if value is None or isinstance(value, Node):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
 
 
-"""Defining My linked list"""
-
-
 class SinglyLinkedList:
+    """Defining My linked list"""
     def __init__(self):
         """The init for my list"""
         self.__head = None
