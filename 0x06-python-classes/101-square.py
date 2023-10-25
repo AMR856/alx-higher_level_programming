@@ -69,6 +69,7 @@ class Square:
             print()
         for i in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
+
     def __str__(self):
         """It's a method to print some hashtags on the screen
 
@@ -76,7 +77,7 @@ class Square:
         myList = ""
         if self.__size == 0:
             return myList
-        for i in range (self.__position[1]):
+        for i in range(self.__position[1]):
             myList = myList + '\n'
         for i in range(self.__size):
             myList = myList + ((" " * self.__position[0] + "#" * self.__size))
