@@ -32,9 +32,9 @@ class Square:
             The tuple that is used to set the values
 
         """
-        if myPos[0] >= 0 and myPos[1] >= 0 and isinstance(myPos, tuple) \
-            and len(myPos) == 2 and isinstance(myPos[0], int) \
-                and isinstance(myPos[1], int):
+        if isinstance(myPos, tuple) and len(myPos) == 2 \
+            and isinstance(myPos[0], int) and isinstance(myPos[1], int) \
+                and myPos[0] >= 0 and myPos[1] >= 0:
             self.__position = myPos
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
