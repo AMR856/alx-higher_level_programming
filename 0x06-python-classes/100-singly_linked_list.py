@@ -23,7 +23,8 @@ class Node:
     def data(self, value):
         """The setter for my data
 
-        Args: The value of the data to be put
+        Args:
+            The value of the data to be put
         """
         if not isinstance(value, int) and value is not None:
             raise TypeError("data must be an integer")
@@ -38,7 +39,8 @@ class Node:
     def next_node(self, value):
         """The setter for my next_node
 
-        Args: The next_node to be put in the list
+        Args:
+            The next_node to be put in the list
         """
         if value is None or isinstance(value, Node):
             self.__next_node = value
@@ -68,7 +70,8 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """A method to add a node in a sorted linked list
 
-        Args: The value of the added node
+        Args:
+            The value of the added node
 
         """
         newNode = Node(value)
