@@ -32,9 +32,9 @@ class Square:
             The tuple that is used to set the values
 
         """
-        if myPos[0] >= 0 and myPos[1] >= 0 and isinstance(myPos, tuple) \
-            and len(myPos) == 2 and isinstance(myPos[0], int) \
-                and isinstance(myPos[1], int):
+        if isinstance(myPos, tuple) and len(myPos) == 2 \
+            and isinstance(myPos[0], int) and isinstance(myPos[1], int) \
+                and myPos[0] >= 0 and myPos[1] >= 0:
             self.__position = myPos
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -69,18 +69,18 @@ class Square:
             print()
         for i in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-
     def __str__(self):
         """It's a method to print some hashtags on the screen
 
         """
         myList = ""
         if self.__size == 0:
-            myList = myList + '\n'
             return myList
-        for i in range(self.__position[1]):
+        for i in range (self.__position[1]):
             myList = myList + '\n'
         for i in range(self.__size):
             myList = myList + ((" " * self.__position[0] + "#" * self.__size))
-            myList = myList + '\n'
-        return myList.strip()
+            if (i != self.__size - 1):
+                myList = myList + '\n'
+        myList.strip()
+        return myList
