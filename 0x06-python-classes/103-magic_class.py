@@ -11,7 +11,7 @@ class MagicClass:
         """The init of my class
 
         Args:
-            The value of the raduis to be put
+            raduis: The value of the raduis
         """
         self.raduis = raduis
         if type(raduis) is not int and type(raduis) is not float:
