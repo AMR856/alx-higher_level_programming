@@ -4,6 +4,7 @@ and that's all it has some error's checking but this
 is not important
 """
 
+
 def add_integer(a, b=98):
     """A function to add two numbers
     Args:
