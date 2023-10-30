@@ -5,7 +5,7 @@
 class Rectangle:
     """Here is the class"""
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
     
     def __init__(self, width=0, height=0):
         """My init function of the rectangle
@@ -70,7 +70,7 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return myList
         for i in range(self.__height):
-            myList = myList + (self.__width * Rectangle.print_symbol)
+            myList = myList + (self.__width * str(self.print_symbol))
             if (i != self.__height - 1):
                 myList = myList + '\n'
         myList.strip()
