@@ -75,6 +75,7 @@ class Rectangle:
     def __repr__(self):
         """A repr method that is used to create new instance"""
         return f"Rectangle({self.__width}, {self.__height})"
+
     def __del__(self):
         """My deconstructor"""
         print("Bye rectangle...")
