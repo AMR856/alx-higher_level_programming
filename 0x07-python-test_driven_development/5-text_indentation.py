@@ -10,18 +10,23 @@ def text_indentation(text):
     counter = 0
     if type(text) != str:
         raise TypeError("text must be a string")
-    for i in text.strip():
-        if (flag and text[counter] != '\n'):
-            flag = 0
+    for i in text:
+        if i == ' ':
             counter = counter + 1
+        else:
+            break
+    for counter in range(counter,len(text)):
+        if (text[counter] in ":?."):
+            print(text[counter], end="")
+            print()
+            print()
+            flag = 1
             continue
-        print(i, end='')
-        if (i in ":?."):
-            counter = counter + 1
-            print()
+        if text[counter] == '\n':
             print()
             flag = 1
-        if (i == '\n'):
-            counter = counter + 1
-            flag = 1
-            print()
+            continue
+        if text[counter] == ' ' and flag == 1:
+            flag = 0
+            continue
+        print(text[counter], end="")
