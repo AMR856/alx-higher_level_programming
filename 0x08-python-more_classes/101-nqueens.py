@@ -8,7 +8,7 @@ if len(sys.argv) != 2:
 
 try:
     myNum = int(sys.argv[1])
-except TypeError:
+except Exception as Everything:
     print("N must be a number")
     sys.exit(1)
 
