@@ -11,6 +11,16 @@ class TestMax(unittest.TestCase):
         myList = [1 , 2, 3, 4, 5]
         self.assertEqual(max_integer(myList), 5, "The Max is wrong")
     
+    def test_beg(self):
+        """Testing max beg"""
+        myList = [5, 4, 3, 2, 1]
+        self.assertEqual(max_integer(myList), 5, "The Max is wrong")
+    
+    def test_mid(self):
+        """Testing max mid"""
+        myList = [3, 4, 5, 2, 1]
+        self.assertEqual(max_integer(myList), 5, "The Max is wrong")
+
     def test_empty(self):
         """Testing empty list condition"""
         myList =[]
