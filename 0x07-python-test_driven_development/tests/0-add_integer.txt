@@ -38,3 +38,9 @@ Checking for exceptions:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+    >>> print(add_integer(nan, 5))
+    Traceback (most recent call last):
+    ...
+    TypeError: cannot convert float NaN to integer
+
