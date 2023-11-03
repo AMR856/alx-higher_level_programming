@@ -27,3 +27,9 @@ Checking for weird inputs:
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+Checking a weird thing:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
