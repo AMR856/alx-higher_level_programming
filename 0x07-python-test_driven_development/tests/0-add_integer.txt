@@ -48,3 +48,13 @@ Checking for exceptions:
     Traceback (most recent call last):
     ...
     ValueError: cannot convert float NaN to integer
+
+    >>> print(add_integer(5, float('inf')))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> print(add_integer(float('inf'), 5))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
