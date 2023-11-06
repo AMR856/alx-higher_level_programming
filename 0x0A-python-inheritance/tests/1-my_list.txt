@@ -1,4 +1,5 @@
 ===============================
+sorting print
         sorting print
 ===============================
 
@@ -7,6 +8,15 @@ First we import the module:
 
 Now we try simple cases:
     >>> my_list = MyList()
+    ... my_list.append(1)
+    ... my_list.append(4)
+    ... my_list.append(2)
+    ... my_list.append(3)
+    ... my_list.append(5)
+    ... print(my_list)
+    ... my_list.print_sorted()
+    ... print(my_list)
+    [1, 4, 2, 3, 5]
     >>> my_list.append(1)
     >>> my_list.append(4)
     >>> my_list.append(2)
@@ -14,8 +24,19 @@ Now we try simple cases:
     >>> my_list.append(5)
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
+    [1, 4, 2, 3, 5]
 
     now we negative:
+    >>> my_list = []
+    ... my_list.append(-1)
+    ... my_list.append(-4)
+    ... my_list.append(-2)
+    ... my_list.append(-3)
+    ... my_list.append(-5)
+    ... print(my_list)
+    ... my_list.print_sorted()
+    ... print(my_list)
+    [-1, -4, -2, -3, -5]
     >>> my_list = MyList()
     >>> my_list.append(-1)
     >>> my_list.append(-4)
@@ -24,12 +45,18 @@ Now we try simple cases:
     >>> my_list.append(-5)
     >>> my_list.print_sorted()
     [-5, -4, -3, -2, -1]
+    [-1, -4, -2, -3, -5]
 
+    >>> my_list = []
     >>> my_list = MyList()
     >>> my_list.print_sorted()
     []
 
-    >>> my_list.print_sorted(1)
-    Traceback (most recent call last):
-    ...
-    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
+    >>> my_list = None
+    >>> my_list.print_sorted()
+    None
+Checking for too many arguments:
+	 >>> my_list.print_sorted(1)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_sorted() takes 1 positional argument but 2 were given
