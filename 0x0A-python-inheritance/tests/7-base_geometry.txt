@@ -1,6 +1,8 @@
-===============================
-        Integer valid
-===============================
+The ``7-base_geometry`` module
+======================
+
+Using ``BaseGeometry``
+-------------------
 
 First we lol the module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
