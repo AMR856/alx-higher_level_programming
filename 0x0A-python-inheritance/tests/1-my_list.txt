@@ -29,7 +29,6 @@ Now we try simple cases:
     >>> my_list.print_sorted()
     []
 
-Checking for too many arguments:
     >>> my_list.print_sorted(1)
     Traceback (most recent call last):
     ...
