@@ -2,10 +2,10 @@
         Integer valid
 ===============================
 
-First we import the module:
+Hi:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Importing the function from the module:
+Lol:
     >>> BG = __import__("7-base_geometry").BaseGeometry
 
     >>> m = __import__("7-base_geometry").__doc__
