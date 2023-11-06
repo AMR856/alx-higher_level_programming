@@ -7,6 +7,4 @@ def inherits_from(obj, a_class):
 
     Args: The object
     The class"""
-    if (a_class == object):
-        return False
-    return (isinstance(obj, a_class))
+    return (issubclass(obj, a_class))
