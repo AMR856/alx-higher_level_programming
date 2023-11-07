@@ -4,11 +4,13 @@ import sys
 
 if __name__ == "__main__":
     argc = len(sys.argv)
-    load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    loadingFun = __import__('6-load_from_json_file').load_from_json_file
+    savingFunc = __import__('5-save_to_json_file').save_to_json_file
 
-    myNewList = []
-    myNewList = load_from_json_file("add_item.json")
+    try:
+        myNewList = loadingFun("add_item.json")
+    except FileNotFoundError:
+        myNewList = []
     for i in range(1, argc):
         myNewList.append((sys.argv[i]))
-    save_to_json_file(myNewList, "add_item.json")
+    savingFunc(myNewList, "add_item.json")
