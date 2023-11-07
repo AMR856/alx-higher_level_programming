@@ -10,4 +10,4 @@ def read_file(filename=""):
     if (len(filename) == 0 or filename is None):
         return
     with open(filename, 'r', encoding='utf-8') as myFile:
-        print(myFile.read())
+        print(myFile.read(), end="")
