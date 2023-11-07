@@ -16,8 +16,8 @@ try:
         counter = counter + 1
         if counter == 10:
             print("File size: {:d}".format(myFinalSize))
-            for i, j in myDic.items():
-                if j != 0:
+            for i, j in sorted(myDic.items()):
+                if j > 0:
                     print("{:d}: {:d}".format(i, j))
             counter = 0
 except KeyboardInterrupt:
@@ -25,3 +25,4 @@ except KeyboardInterrupt:
     for i, j in myDic.items():
         if j != 0:
             print("{:d}: {:d}".format(i, j))
+    raise
