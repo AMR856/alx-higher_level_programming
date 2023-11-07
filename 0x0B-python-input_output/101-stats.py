@@ -18,11 +18,11 @@ try:
             print("File size: {:d}".format(myFinalSize))
             for i, j in sorted(myDic.items()):
                 if j > 0:
-                    print("{:d}: {:d}".format(i, j))
+                    print("{:}: {:d}".format(i, j))
             counter = 0
 except KeyboardInterrupt:
     print("File size: {:d}".format(myFinalSize))
     for i, j in myDic.items():
-        if j != 0:
-            print("{:d}: {:d}".format(i, j))
+        if j < 0:
+            print("{:}: {:d}".format(i, j))
     raise
