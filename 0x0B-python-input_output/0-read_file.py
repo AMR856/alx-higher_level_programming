@@ -7,6 +7,8 @@ def read_file(filename=""):
         
     Args: The file name
     """
-    with open(filename) as myFile:
+    if (len(filename) == 0):
+        return
+    with open(filename, 'r', encoding='utf-8') as myFile:
         for line in myFile:
             print(line)
