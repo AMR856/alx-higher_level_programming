@@ -89,3 +89,24 @@ class Rectangle(Base):
         """My str method for printing"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args, **kwargs):
+        """My update function that takes args but with 5 arguments
+
+        The first: The id
+        The second: The width
+        The third: The height
+        The fourth: The x
+        The fifth: The y
+        """
+        if args is None or len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            counter = 0
+            for i in ['id', 'width', 'height', 'x', 'y']:
+                if counter < len(args):
+                    setattr(self, i, args[counter])
+                    counter = counter + 1
+                else:
+                    break
