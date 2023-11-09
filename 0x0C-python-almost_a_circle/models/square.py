@@ -54,3 +54,6 @@ class Square(Rectangle):
                     counter = counter + 1
                 else:
                     break
+
+    def to_dictionary(self):
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
