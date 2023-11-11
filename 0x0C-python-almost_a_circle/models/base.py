@@ -35,14 +35,14 @@ class Base:
 
         Args: The list of objects
         """
-        with open (f"{cls.__name__}.json", 'w', encoding='utf-8') as myFile:
+        with open(f"{cls.__name__}.json", 'w', encoding='utf-8') as myFile:
             if list_objs is None:
                 myFile.write("[]")
             myList = []
             for i in list_objs:
                 myList.append(i.to_dictionary())
             myFile.write(Base.to_json_string(myList))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """A method to get the list back from json
@@ -59,17 +59,40 @@ class Base:
 
         Args: The list of objects
         """
-        with open (f"{cls.__name__}.csv", 'w', encoding='utf-8') as myFile:
-            if list_objs is None:
+        with open(f"{cls.__name__}.csv", 'w', encoding='utf-8') as myFile:
+            if list_objs is None or len(list_objs) == 0:
                 myFile.write("")
-            myList = []
-            for i in list_objs:
-                myList.append(i.to_dictionary())
-            csv_writer = csv.writer(myFile)
-            csv_writer.writerows(myList)
+            else:
+                if cls.__name__ == "Rectangle":
+                    myFields = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    myFields = ["id", "size", "x", "y"]
+                myWriter = csv.DictWriter(myFile, myFields)
+                for obj in list_objs:
+                    myWriter.writerow(obj.to_dictionary())
 
+    @classmethod
     def load_from_file_csv(cls):
-        pass
+        """A method to load from a csv file
+
+        Args: Nothing
+        """
+        try:
+            with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as myFile:
+                if cls.__name__ == "Rectangle":
+                    myFields = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    myFields = ["id", "size", "x", "y"]
+                myReturnedList = []
+                myListOfDic = csv.DictReader(myFile, myFields)
+                myListOfDic = [dict([(myKey, int(myValue)) for myKey, myValue
+                                    in miniD.items()])
+                                    for miniD in myListOfDic]
+                for item in myListOfDic:
+                    myReturnedList.append(cls.create(**item))
+                return myReturnedList
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def create(cls, **dictionary):
@@ -79,17 +102,17 @@ class Base:
         """
         if cls.__name__ == "Rectangle":
             myDummyR = cls(1, 1, 0, 0, None)
-            cls.update(dictionary)
+            myDummyR.update(**dictionary)
             return myDummyR
         elif cls.__name__ == "Square":
             myDummyS = cls(1, 0, 0, None)
-            cls.update(dictionary)
+            myDummyS.update(**dictionary)
             return myDummyS
 
     @classmethod
     def load_from_file(cls):
         """A method to load an object from json file
-        
+
         Args: Nothing
         """
         try:
@@ -97,10 +120,8 @@ class Base:
                 myList = []
                 theJsonString = myFile.read()
                 mylistAfterJson = Base.from_json_string(theJsonString)
-                for i in mylistAfterJson:
-                    myList.append(cls.create(**i))
+                for item in mylistAfterJson:
+                    myList.append(cls.create(**item))
                 return myList
         except FileNotFoundError:
             return []
-        
-    # [{'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8}, {'id': 2, 'width': 2, 'height': 4, 'x': 0, 'y': 0}]
