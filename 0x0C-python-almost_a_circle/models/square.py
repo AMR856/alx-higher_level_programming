@@ -15,9 +15,9 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    """A setter and getter for my square"""
     @property
     def size(self):
+        """A setter and getter for my square"""
         return self._Rectangle__width
 
     @size.setter
@@ -56,4 +56,5 @@ class Square(Rectangle):
                     break
 
     def to_dictionary(self):
+        """A method that returns a dic that represents the object"""
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
