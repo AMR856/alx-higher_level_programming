@@ -4,7 +4,6 @@ import json
 import csv
 
 
-
 class Base:
     """Here is my class"""
     __nb_objects = 0
@@ -89,7 +88,7 @@ class Base:
                 myListOfDic = csv.DictReader(myFile, myFields)
                 myListOfDic = [dict([(myKey, int(myValue)) for myKey, myValue
                                     in miniD.items()])
-                                    for miniD in myListOfDic]
+                               for miniD in myListOfDic]
                 for item in myListOfDic:
                     myReturnedList.append(cls.create(**item))
                 return myReturnedList
