@@ -113,5 +113,6 @@ class Rectangle(Base):
                     break
 
     def to_dictionary(self):
+        """A function to get a dic that represents the object"""
         return {"id": self.id, "width": self.__width,
                 "height": self.__height, "x": self.__x, "y": self.__y}
