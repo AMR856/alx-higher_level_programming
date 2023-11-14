@@ -4,6 +4,7 @@ from base import Base
 
 
 class Rectangle(Base):
+    """Here is my rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Here is init function
 
