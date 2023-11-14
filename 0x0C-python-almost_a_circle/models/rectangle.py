@@ -20,9 +20,10 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    """The getter and setter for my width"""
+    
     @property
     def width(self):
+        """The getter and setter for my width"""
         return self.__width
 
     @width.setter
@@ -33,9 +34,9 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format("width"))
         self.__width = myValue
 
-    """The getter and setter for my height"""
     @property
     def height(self):
+        """The getter and setter for my height"""
         return self.__height
 
     @height.setter
@@ -46,9 +47,10 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format("height"))
         self.__height = myValue
 
-    """The getter and setter for my x"""
+
     @property
     def x(self):
+        """The getter and setter for my x"""
         return self.__x
 
     @x.setter
@@ -59,9 +61,9 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format("x"))
         self.__x = myValue
 
-    """The getter and setter for my y"""
     @property
     def y(self):
+        """The getter and setter for my y"""
         return self.__y
 
     @y.setter
