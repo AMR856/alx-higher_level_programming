@@ -20,7 +20,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    
     @property
     def width(self):
         """The getter and setter for my width"""
@@ -46,7 +45,6 @@ class Rectangle(Base):
         if myValue <= 0:
             raise ValueError("{} must be > 0".format("height"))
         self.__height = myValue
-
 
     @property
     def x(self):
