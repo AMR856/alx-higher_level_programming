@@ -1,7 +1,11 @@
 #!/usr/bin/node
 const process = require('process');
-if (process.argv.length == 2) {
-    console.log("No argument");
+let myCount = 0;
+for (i in process.argv) {
+    myCount++;
+}
+if (myCount == 2) {
+    console.log('No argument');
 } else {
     console.log(process.argv[2]);
 }
