@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A code here"""
 from sqlalchemy import create_engine
 from model_state import Base, State
 import sys
