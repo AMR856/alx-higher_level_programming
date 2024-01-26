@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Starting to get something real"""
 import MySQLdb
 import sys
 
