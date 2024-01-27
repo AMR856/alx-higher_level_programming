@@ -15,7 +15,6 @@ if __name__ == "__main__":
 
     theAddedOne = State(name='Louisiana')
     session.add(theAddedOne)
-    print(theAddedOne.id)
     theNewCity = session.query(State).filter(State.name == 'Louisiana').first()
     print(theNewCity.id)
     session.commit()
