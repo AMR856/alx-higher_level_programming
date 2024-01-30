@@ -1,3 +1,3 @@
 #!/bin/bash
 # A script to curlllllll
-curl -L "$1"
+curl -L -s "$1"
