@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A script that uses some things to do things"""
-import urllib.request, urllib.parse
+import urllib.request
+import urllib.parse
 import sys
 if __name__ == "__main__":
     theUrl = sys.argv[1]
@@ -10,4 +11,4 @@ if __name__ == "__main__":
     theRequest = urllib.request.Request(theUrl, theFinalData)
     with urllib.request.urlopen(theRequest) as response:
         the_page = response.read()
-        print(the_page.decode('utf-8'))
+        print(the_page)
