@@ -7,4 +7,4 @@ if __name__ == "__main__":
     theUrl = sys.argv[1]
     theEmail = sys.argv[2]
     r = requests.post(theUrl, data={"email": theEmail})
-    print(r.content.decode('utf-8'))
+    print(r.text)
