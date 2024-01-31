@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 """A script that uses some things to do things"""
-import urllib.request, urllib.parse
+import urllib.request
 import sys
 if __name__ == "__main__":
-    theUrl = sys.argv[1]
-    values = {"email": sys.argv[2]}
-    theFinalData = urllib.parse.urlencode(values)
-    theFinalData = theFinalData.encode('ascii')
-    theRequest = urllib.request.Request(theUrl, theFinalData)
-    with urllib.request.urlopen(theRequest) as response:
-        the_page = response.read()
-        print(the_page.decode('utf-8'))
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+        html = response.read()
+        print("Body response:")
+        print(f"\t- type: {type(html)}")
+        print(f"\t- content: {html}")
+        print(f"\t- utf8 content: {html.decode('utf-8')}")
