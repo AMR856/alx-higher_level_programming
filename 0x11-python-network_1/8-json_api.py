@@ -9,7 +9,7 @@ if __name__ == "__main__":
         letter = ""
     else:
         letter = sys.argv[1]
-    response = requests.post(theUrl, data = {"q" : letter})
+    response = requests.post(theUrl, data={"q": letter})
     try:
         r = response.json()
         if r == {}:
