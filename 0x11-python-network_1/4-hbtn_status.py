@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """A script that uses some things to do things"""
-import requests 
+import requests
 if __name__ == "__main__":
     response = requests.get("https://alx-intranet.hbtn.io/status")
     print("Body response:")
