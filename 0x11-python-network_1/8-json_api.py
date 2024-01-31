@@ -4,7 +4,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    theUrl = "http://0.0.0.0:5000/search_user "
+    theUrl = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) == 1:
         letter = ""
     else:
@@ -15,6 +15,6 @@ if __name__ == "__main__":
         if r == {}:
             print("No result")
         else:
-            print(f"[{r.id}] {r.name}")
+            print(f"[{r['id']}] {r['name']}")
     except ValueError:
         print("Not a valid JSON")
