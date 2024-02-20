@@ -1,23 +1,20 @@
 #!/usr/bin/node
 const process = require('process');
-const request = require('sync-request');
+const request = require('request');
 
 const url = 'https://swapi-api.alx-tools.com/api/films/';
 const fullUrl = url.concat('', process.argv[2]);
-const response = request('GET', fullUrl);
-
-if (response.statusCode === 200) {
-  const jsonBody = JSON.parse(response.getBody('utf8'));
-
-  for (let i = 0; i < jsonBody.characters.length; i++) {
-    const characterResponse = request('GET', jsonBody.characters[i]);
-    if (characterResponse.statusCode === 200) {
-      const characterName = (JSON.parse(characterResponse.getBody('utf8'))).name;
-      console.log(characterName);
-    } else {
-      console.log(`Error fetching character: ${characterResponse.statusCode}`);
-    }
+request(fullUrl, function(error, response, body) {
+  if (error) {
+    console.log(error);
   }
-} else {
-  console.log(`Error fetching film details: ${response.statusCode}`);
-}
+  const jsonBody = JSON.parse(body);
+  for (let i = 0; i < jsonBody.characters.length; i++) {
+    request(jsonBody.characters[i], function(err, response1, body1)  {
+      if (err) {
+        console.log(err);
+      }
+      console.log(JSON.parse(body1).name);
+    });
+  }
+});
