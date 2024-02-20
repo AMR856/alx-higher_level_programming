@@ -13,8 +13,7 @@ request(url, (error, response, body) => {
     if (jsonBody[i].completed === true) {
       if (myObject[jsonBody[i].userId] === undefined) {
         myObject[jsonBody[i].userId] = 1;
-      }
-      else {
+      } else {
         myObject[jsonBody[i].userId] = myObject[jsonBody[i].userId] + 1;
       }
     }
